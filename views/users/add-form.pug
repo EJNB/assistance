@@ -1,0 +1,20 @@
+html(lang="es")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        title AdminLTE 2 | Dashboard
+        // Tell the browser to be responsive to screen width
+        meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+        title= title
+        block stylesheet
+    body.hold-transition.skin-blue.sidebar-mini
+        form(method='post',action='/users')
+            .form-group
+                input.form-control(placeholder='Inserte nombre y apellidos',name='nombre')
+            .form-group
+                input.form-control(placeholder='Cargo',name='occupation')
+            .form-group
+                input.form-control(placeholder='email',name='email')
+            .form-group
+                input.form-control(placeholder='Departamento',name='department')
+            button(type='submit') Enviar

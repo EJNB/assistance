@@ -1,0 +1,13 @@
+html(lang="es")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        title AdminLTE 2 | Dashboard
+        // Tell the browser to be responsive to screen width
+        meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+        title= title
+        block stylesheet
+    body.hold-transition.skin-blue.sidebar-mini
+      h1 Users List
+      each user in users
+          h1 #{user.name}
