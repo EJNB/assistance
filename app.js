@@ -7,8 +7,9 @@ const express = require('express'),
     viewDir = __dirname+'/views',
     port = ( process.env.PORT || 3000 ),
     app = express(),
-    report = require('./routes/reports'),
-    user = require('./routes/users')
+    // reportRouter = require('./routes/reportsRouter'),
+    // userRouter = require('./routes/usersRouter'),
+    dapartmentRouter = require('./routes/departmentRouter')
 ;
 
 // let report = require('./routes/reports');
@@ -24,7 +25,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(publicDir);
 
-app.use('/reports',report);
-app.use('/users',user);
+// app.use('/reports',reportRouter);
+// app.use('/users',userRouter);
+app.use('/departments',dapartmentRouter);
 
 module.exports = app;

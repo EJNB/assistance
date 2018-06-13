@@ -10,9 +10,8 @@ let mongoose = require('mongoose'),
         reports : [{ type : Schema.Types.ObjectId , ref : 'Report'}]
     }),
     departmentSchema = new Schema({
-        name : { type : String , required : true },
+        name : { type : String , required : true , index : true, unique : true },
         users : [{ type : Schema.Types.ObjectId , ref : 'User'}],
-        persons : [{ type : Schema.Types.ObjectId , ref : 'Person'}]
     }),
     reportSchema = new Schema({
         subject : String,
@@ -32,15 +31,14 @@ let mongoose = require('mongoose'),
         email : { type : String, required : true },
         reports : [{ type : Schema.Types.ObjectId , ref : 'Report'}]
     }),
-    userModel = mongoose.model('User',userSchema),
-    departmentModel = mongoose.model('Department',departmentSchema),
-    reportModel = mongoose.model('Report', reportSchema),
-    personModel = mongoose.model('Person', personSchema);
+    User = mongoose.model('User',userSchema),
+    Department = mongoose.model('Department',departmentSchema),
+    Report = mongoose.model('Report', reportSchema),
+    Person = mongoose.model('Person', personSchema);
 
 mongoose.connect('mongodb://localhost/asistenciadb');
 
-module.exports.userModel = userModel;
-module.exports.departmentModel = departmentModel;
-module.exports.reportModel = reportModel;
-module.exports.personModel = personModel;
-
+module.exports.userModel = User;
+module.exports.departmentModel = Department;
+module.exports.reportModel = Report;
+module.exports.personModel = Person;

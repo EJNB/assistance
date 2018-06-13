@@ -1,0 +1,24 @@
+extends ../layouts/main
+block content
+
+    h1 Department List
+    table
+        thead
+            tr
+                th Departamentos
+                th Acciones
+        tbody
+            each department in departments
+                tr
+                    td #{department.name}
+                    td
+                        a(href=`departments/edit/${department._id}`) Editar
+                        a(href='javascript:void(0);' data-url=`departments/delete/${department._id}`) Eliminar
+        tfoot
+            form(method='POST',action='/departments/')
+                tr
+                    td
+                        input(type='text',name='department')
+                    td
+                        input(type='submit',value='submit')
+
