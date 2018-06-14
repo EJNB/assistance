@@ -2,6 +2,7 @@ const express = require('express'),
     favicon = require('serve-favicon'),
     bodyParser = require('body-parser'),
     logger = require('morgan'),
+    // path = require(''),
     faviconURL = __dirname+'/public/img/node-favicon.png',
     publicDir = express.static(__dirname+'/public'),
     viewDir = __dirname+'/views',
@@ -16,6 +17,7 @@ const express = require('express'),
 
 // view engine setup
 app.set('views', viewDir);
+// app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'pug');
 app.set('port',port);
 
