@@ -6,6 +6,6 @@ router.get('/',departmentController.findAll);
 router.post('/',departmentController.createDepartment);
 router.get('/edit/:id', departmentController.showFormEdit);
 router.post('/update/:id', departmentController.updateDepartment);
-router.delete('/delete/:id');
+router.get('/delete/:id',departmentController.deleteDepartment);
 
 module.exports = router;

@@ -4,3 +4,4 @@ block content
     form(method='POST' action='/departments/update/'+department._id)
         input(type='text',name='department' value=department.name)
         input(type='submit' value='submit')
+        a.btn.btn-primary(href='/departments') Regresar el listado

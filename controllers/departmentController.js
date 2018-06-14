@@ -25,4 +25,9 @@ departmentController.updateDepartment = function (req,res,next) {
     });
 };
 
+departmentController.deleteDepartment = function(req,res,next){
+    departmentModel.removeDepartment(req.params.id);
+    res.redirect('/departments');
+};
+
 module.exports = departmentController;

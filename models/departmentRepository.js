@@ -28,4 +28,10 @@ departmentRepository.findByIdAndUpdate = function (id,department_name,cb) {
     });
 };
 
+departmentRepository.removeDepartment = function(id){
+    Department.findByIdAndRemove(id,function (err) {
+        err ? console.log(err) : console.log('The department has been deleted successfully');
+    });
+};
+
 module.exports = departmentRepository;
